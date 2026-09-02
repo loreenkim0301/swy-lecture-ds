@@ -31,9 +31,23 @@ npm install swy-lecture-ds
 @import "swy-lecture-ds/dist/swy-lecture-ds.css";
 ```
 
-### 사용법
-
 모든 스타일은 `.sw-scope` 클래스 안에서만 적용됩니다. **호스트 페이지의 다른 영역은 건드리지 않습니다.**
+
+전체 컴포넌트 데모는 [`docs/index.html`](./docs/index.html) 참고 (GitHub Pages로 배포 예정).
+
+## 사용 예시 두 가지
+
+이 라이브러리는 두 가지 방식으로 쓸 수 있습니다. **먼저 어느 쪽인지 정하고 시작하세요.**
+
+| | 방법 1. 컴포넌트만 쓰기 | 방법 2. 컴포넌트 + 작성 원칙 |
+|---|---|---|
+| 이런 상황에 추천 | 블로그 글 한 편에 카드·안내박스 정도만 예쁘게 넣고 싶다 | 목차·섹션이 있는 강의 교안/기술 문서를 처음부터 구조 있게 쓴다 |
+| 필요한 것 | CSS/JS 파일 연결 | + [`docs/writing-guide.md`](./docs/writing-guide.md)의 6가지 규칙 |
+| 강제되는 규칙 | 없음 (원하는 대로 조합) | 목차-제목 연결, 넘버링, 서술형 설명 우선 등 |
+
+### 1) 컴포넌트만 순수하게 쓰기
+
+작성 규칙 없이, 필요한 컴포넌트만 골라 씁니다. 기존 블로그 글 중간에 카드나 안내 박스 하나만 추가하고 싶을 때 이 방식을 쓰세요.
 
 ```html
 <div class="sw-scope">
@@ -41,10 +55,52 @@ npm install swy-lecture-ds
     <h3>카드 제목</h3>
     <p>카드 본문</p>
   </div>
+
+  <div class="sw-tip">
+    <span class="sw-label">팁</span>
+    이런 식으로 필요한 컴포넌트만 하나씩 갖다 쓰면 됩니다. 목차나 넘버링 규칙은 신경 쓰지 않아도 됩니다.
+  </div>
 </div>
 ```
 
-전체 컴포넌트 데모는 [`docs/index.html`](./docs/index.html) 참고 (GitHub Pages로 배포 예정).
+### 2) 기본 컴포넌트 + 셀렉트웨이 교안 작성 원칙까지 적용
+
+SELECTWAY가 실제 교안을 쓸 때 지키는 6가지 원칙(목차-제목 연결, 넘버링 체계, "제목→설명→보충자료" 순서, 출처 표시, 이미지 직접 제작, 톤앤매너)까지 함께 적용하는 방식입니다. 자세한 설명과 각 원칙의 이유는 **[`docs/writing-guide.md`](./docs/writing-guide.md)** 를 먼저 읽어보세요. 아래는 그 원칙을 반영한 최소 골격입니다.
+
+```html
+<div class="sw-scope sw-page">
+  <aside class="sw-sidebar">
+    <nav>
+      <ol>
+        <li><a href="#s1">1. 기획자의 제품 개발 흐름</a>
+          <ol>
+            <li><a href="#s1-1">1.1 기존 제품 개발 흐름</a></li>
+            <li><a href="#s1-2">1.2 AI 이후 초기 기획 단계</a></li>
+          </ol>
+        </li>
+      </ol>
+    </nav>
+  </aside>
+
+  <div class="sw-content">
+    <section>
+      <h1 class="sw-section-title" id="s1">1. 기획자의 제품 개발 흐름</h1>
+
+      <h2 class="sw-sub-title" id="s1-1">1.1 기존 제품 개발 흐름</h2>
+      <!-- 원칙 3: 제목 다음은 항상 서술형 설명부터 -->
+      <p>기존에는 기획자가 기획서를 쓰면 디자이너가 화면을 그리고, 개발자가 코드를 짜는 순서로 진행됐어요. 각 단계마다 사람이 바뀌다 보니 의도가 조금씩 손실되는 게 문제였죠.</p>
+
+      <!-- 원칙 4: 인용한 데이터/이미지는 출처 표시 -->
+      <div class="sw-cite">
+        <span class="sw-cite-label">출처</span>
+        SELECTWAY 자체 강의 자료 (2026)
+      </div>
+    </section>
+  </div>
+</div>
+```
+
+이 골격을 그대로 복사해서 섹션만 늘려나가면, `docs/writing-guide.md`의 체크리스트를 자연스럽게 따르게 됩니다.
 
 ## 왜 `.sw-scope`로 감쌌나 (중요)
 
