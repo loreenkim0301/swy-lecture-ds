@@ -1,0 +1,93 @@
+/* =========================================================
+   selectway-lecture-ds — layout (sidebar + content)
+   PC / 태블릿 / 모바일 3단 반응형.
+   미디어쿼리 값은 tokens.css의 --sw-bp-tablet(1023px),
+   --sw-bp-mobile(640px)와 반드시 동일하게 유지할 것
+   (CSS 커스텀 속성은 @media 조건에 직접 못 쓰므로 여기 하드코딩).
+   ========================================================= */
+.sw-page{
+  display:flex;
+  align-items:flex-start;
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.sw-sidebar{
+  position:sticky;
+  top:0;
+  align-self:flex-start;
+  width:var(--sw-sidebar-w);
+  flex:none;
+  height:100vh;
+  overflow-y:auto;
+  padding:28px 20px 40px;
+  border-right:1px solid var(--sw-line);
+  background:var(--sw-surface);
+}
+.sw-sidebar .sw-home-link{
+  display:inline-block;
+  font-size:13px;
+  font-weight:700;
+  color:var(--sw-accent-ink);
+  text-decoration:none;
+  margin-bottom:18px;
+}
+.sw-sidebar .sw-home-link:hover{ color:var(--sw-accent); text-decoration:underline; }
+.sw-sidebar .sw-doc-title{ font-size:14.5px; font-weight:800; color:var(--sw-ink); margin-bottom:18px; line-height:1.5; }
+.sw-sidebar .sw-toc-label{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--sw-ink-muted); font-weight:700; margin-bottom:10px; }
+
+.sw-sidebar nav ol, .sw-sidebar nav ul{ list-style:none; margin:0; padding:0; }
+.sw-sidebar nav ol ol, .sw-sidebar nav ul ul{ padding-left:14px; margin-top:4px; }
+.sw-sidebar nav a{ display:block; padding:6px 8px; border-radius:7px; font-size:13.5px; color:var(--sw-ink); text-decoration:none; line-height:1.5; }
+.sw-sidebar nav a:hover{ background:var(--sw-accent-soft); color:var(--sw-accent-ink); }
+.sw-sidebar nav > ol > li > a{ font-weight:700; }
+.sw-sidebar nav ol ol a{ font-size:12.8px; color:var(--sw-ink-muted); font-weight:400; }
+.sw-sidebar nav ol ol a:hover{ color:var(--sw-accent-ink); }
+.sw-sidebar nav a.sw-active{ background:var(--sw-accent-soft); color:var(--sw-accent-ink); font-weight:700; box-shadow:inset 2px 0 0 var(--sw-accent); }
+.sw-sidebar nav ol ol a.sw-active{ font-weight:700; }
+.sw-sidebar nav a.sw-active-parent{ color:var(--sw-accent-ink); }
+
+.sw-sidebar-toggle-input{ display:none; }
+.sw-sidebar-toggle-btn{
+  display:none;
+  position:fixed;
+  top:14px; left:14px;
+  z-index:40;
+  background:var(--sw-ink);
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:8px 12px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:var(--sw-shadow);
+}
+
+.sw-content{
+  flex:1;
+  min-width:0;
+  padding:56px 40px 96px;
+  max-width:var(--sw-content-max);
+}
+
+/* ---- 태블릿(641px~1023px): 사이드바를 접이식으로, 본문 여백만 축소 ---- */
+@media (max-width:1023px){
+  .sw-sidebar-toggle-btn{ display:inline-block; }
+  .sw-sidebar{
+    position:fixed;
+    z-index:39;
+    left:0; top:0;
+    height:100vh;
+    transform:translateX(-102%);
+    transition:transform .2s ease;
+    box-shadow:var(--sw-shadow);
+  }
+  .sw-sidebar-toggle-input:checked ~ .sw-sidebar{ transform:translateX(0); }
+  .sw-content{ padding:80px 28px 80px; }
+}
+
+/* ---- 모바일(~640px): 본문 여백 추가 축소 ---- */
+@media (max-width:640px){
+  .sw-content{ padding:76px 18px 72px; }
+}

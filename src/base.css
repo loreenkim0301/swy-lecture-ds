@@ -1,0 +1,26 @@
+/* =========================================================
+   selectway-lecture-ds — base
+   중요: 전역 태그(body, a, h1...)를 직접 건드리지 않는다.
+   반드시 .sw-scope 안에서만 리셋/타이포그래피가 적용되도록 한다.
+   호스트 페이지의 나머지 요소는 절대 건드리지 않기 위함.
+   ========================================================= */
+.sw-scope{
+  box-sizing:border-box;
+  background:var(--sw-bg);
+  color:var(--sw-ink);
+  font-family:var(--sw-font-sans);
+  font-size:16px;
+  line-height:1.72;
+  word-break:keep-all;        /* 한국어 줄바꿈 최적화 */
+  overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+}
+.sw-scope *, .sw-scope *::before, .sw-scope *::after{ box-sizing:inherit; }
+
+.sw-scope code, .sw-scope pre, .sw-scope .sw-mono{ font-family:var(--sw-font-mono); }
+.sw-scope a{ color:var(--sw-accent); text-decoration:none; text-underline-offset:2px; }
+.sw-scope a:hover{ color:var(--sw-accent-ink); text-decoration:underline; }
+.sw-scope h1,.sw-scope h2,.sw-scope h3,.sw-scope h4{ font-weight:800; line-height:1.35; color:var(--sw-ink); margin:0; }
+.sw-scope p{ margin:0 0 1rem; }
+.sw-scope ul,.sw-scope ol{ padding-left:1.35rem; }
+.sw-scope li{ margin-bottom:.4rem; }

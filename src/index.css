@@ -1,0 +1,5 @@
+/* selectway-lecture-ds — 진입점. 이 파일 하나만 불러오면 전체 시스템 적용됨. */
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components.css";

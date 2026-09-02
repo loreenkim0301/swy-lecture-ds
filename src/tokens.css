@@ -1,0 +1,51 @@
+/* =========================================================
+   selectway-lecture-ds — design tokens
+   모든 값은 --sw- 접두어로 네임스페이스: 호스트 페이지의
+   기존 CSS 변수와 충돌하지 않도록 함.
+   ========================================================= */
+:root{
+  /* color */
+  --sw-bg:#f7f8fa;
+  --sw-surface:#ffffff;
+  --sw-surface-2:#f3f5f7;
+  --sw-ink:#171a1f;
+  --sw-ink-muted:#69717c;
+  --sw-line:#e3e6ea;
+
+  --sw-accent:#3056d3;
+  --sw-accent-soft:#eef2ff;
+  --sw-accent-ink:#2444aa;
+
+  --sw-green:#147d64;
+  --sw-green-soft:#eaf7f2;
+  --sw-orange:#a75a22;
+  --sw-orange-soft:#fff1e7;
+  --sw-red:#a13b3b;
+  --sw-red-soft:#fff0f0;
+
+  --sw-code-bg:#15191f;
+  --sw-code-ink:#eef1f4;
+
+  /* type */
+  --sw-font-sans:"Noto Sans KR","Pretendard","Malgun Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+  --sw-font-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+
+  /* shape */
+  --sw-radius-sm:7px;
+  --sw-radius:12px;
+  --sw-shadow:0 8px 24px rgba(27,33,44,.06);
+
+  /* layout */
+  --sw-sidebar-w:260px;
+  --sw-content-max:820px;
+
+  /* breakpoints (컨벤션 문서화용 — CSS 변수는 media query 조건에 못 씀,
+     JS/문서에서 동일 값을 참조할 때 기준으로 사용) */
+  --sw-bp-tablet:1023px;
+  --sw-bp-mobile:640px;
+}
+
+/* 다크 배경 위에서 쓰는 보조 토큰 (프롬프트 박스, 모달 등) */
+.sw-scope{
+  --sw-overlay-bg:rgba(15,17,21,.94);
+}

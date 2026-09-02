@@ -1,0 +1,19 @@
+name: Build check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build.js
+      - name: dist가 최신인지 확인 (커밋된 dist와 재빌드 결과가 다르면 실패)
+        run: git diff --exit-code -- dist/

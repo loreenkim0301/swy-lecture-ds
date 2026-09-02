@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>selectway-lecture-ds — 컴포넌트 데모</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../dist/selectway-lecture-ds.css">
+<style>
+  body{ margin:0; }
+  .demo-intro{ max-width:820px; margin:0 auto; padding:40px 40px 0; }
+  .demo-intro .sw-badge{ margin-right:6px; }
+</style>
+</head>
+<body>
+
+<div class="demo-intro sw-scope">
+  <span class="sw-badge">v0.1.0-draft</span><span class="sw-badge">MIT</span>
+  <h1 style="margin:14px 0 6px;">selectway-lecture-ds</h1>
+  <p class="sw-lede">PC·태블릿·모바일에 최적화된, 강의 교안·기술 블로그용 드롭인 디자인 시스템입니다. 빌드 도구 없이 CSS/JS 파일 하나씩만 연결하면 바로 적용됩니다.</p>
+</div>
+
+<div class="sw-scope sw-page" style="margin-top:32px;">
+  <input type="checkbox" class="sw-sidebar-toggle-input" id="sw-sidebar-toggle">
+  <label for="sw-sidebar-toggle" class="sw-sidebar-toggle-btn">목차</label>
+
+  <aside class="sw-sidebar">
+    <a class="sw-home-link" href="#top">← selectway-lecture-ds</a>
+    <div class="sw-doc-title">컴포넌트 데모</div>
+    <div class="sw-toc-label">목차</div>
+    <nav>
+      <ol>
+        <li><a href="#header">1. 표지 헤더</a></li>
+        <li><a href="#cards">2. 카드 / 그리드</a></li>
+        <li><a href="#boxes">3. 안내 박스 (note/tip/notice/story)</a></li>
+        <li><a href="#prompt">4. 프롬프트 박스 (복사)</a></li>
+        <li><a href="#table">5. 표</a></li>
+        <li><a href="#modal">6. 전체화면 모달</a></li>
+        <li><a href="#responsive">7. 반응형 확인</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <div class="sw-content">
+
+    <header class="sw-doc-header" id="header">
+      <div class="sw-date">2026.09.02 draft</div>
+      <h1 id="top">1. 표지 헤더 (.sw-doc-header)</h1>
+      <p class="sw-lede">교안/블로그 글 맨 위에 쓰는 표지 컴포넌트입니다. 날짜, 제목, 리드 문단으로 구성됩니다.</p>
+    </header>
+
+    <section id="cards">
+      <h1 class="sw-section-title">2. 카드 / 그리드</h1>
+      <div class="sw-grid3">
+        <div class="sw-card"><h3>카드 A</h3><p><strong>sw-grid3</strong> 안에서 3열로 배치됩니다. 태블릿에서는 2열, 모바일에서는 1열로 자동 전환됩니다.</p></div>
+        <div class="sw-card"><h3>카드 B</h3><p>모든 카드는 <code>sw-card</code> 클래스 하나로 완성됩니다.</p></div>
+        <div class="sw-card"><h3>카드 C</h3><p>그림자와 라운드 값은 토큰(<code>--sw-shadow</code>, <code>--sw-radius</code>)으로 통일됩니다.</p></div>
+      </div>
+    </section>
+
+    <section id="boxes">
+      <h1 class="sw-section-title">3. 안내 박스</h1>
+      <div class="sw-note"><span class="sw-label">참고</span>파란색 note는 일반 참고 정보에 씁니다.</div>
+      <div class="sw-tip"><span class="sw-label">팁</span>초록색 tip은 실전 팁·권장 사항에 씁니다.</div>
+      <div class="sw-notice"><span class="sw-label">주의</span>주황색 notice는 주의사항·제약에 씁니다.</div>
+      <div class="sw-story"><span class="sw-label">경험담</span>베이지색 story는 저자의 현장 경험담처럼 본문과 톤을 다르게 줄 때 씁니다.</div>
+    </section>
+
+    <section id="prompt">
+      <h1 class="sw-section-title">4. 프롬프트 박스</h1>
+      <p class="sw-prompt-tier">기본 프롬프트</p>
+      <div class="sw-prompt-wrap">
+        <button class="sw-copy-btn" data-sw-copy>복사</button>
+        <div class="sw-prompt-box">너는 UI 디자인을 돕는 어시스턴트야.
+아래 조건에 맞는 랜딩페이지를 단일 .html 파일로 만들어줘.
+조건: [여기에 조건을 채워넣으세요]</div>
+      </div>
+    </section>
+
+    <section id="table">
+      <h1 class="sw-section-title">5. 표</h1>
+      <div class="sw-tablewrap">
+        <table>
+          <thead><tr><th>클래스</th><th>용도</th></tr></thead>
+          <tbody>
+            <tr><td><code>.sw-card</code></td><td>범용 카드</td></tr>
+            <tr><td><code>.sw-note</code></td><td>참고 안내</td></tr>
+            <tr><td><code>.sw-tablewrap</code></td><td>표를 감싸 가로 스크롤 처리</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="modal">
+      <h1 class="sw-section-title">6. 전체화면 모달</h1>
+      <p>QR코드, 확대 안내 등에 쓰는 범용 풀스크린 모달입니다. <code>data-sw-modal-open</code>으로 아무 버튼에나 연결할 수 있습니다.</p>
+      <button class="sw-btn" data-sw-modal-open="#demo-modal" type="button">모달 열기</button>
+      <div class="sw-modal" id="demo-modal" hidden role="dialog" aria-modal="true">
+        <button class="sw-modal-close" data-sw-modal-close type="button" aria-label="닫기">✕</button>
+        <p class="sw-modal-text">이렇게 큰 텍스트나 QR 이미지를<br>화면 전체에 띄울 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section id="responsive">
+      <h1 class="sw-section-title">7. 반응형 확인</h1>
+      <p>브라우저 폭을 줄여 태블릿(~1023px)·모바일(~640px) 구간에서 사이드바가 접이식으로 바뀌는지 확인하세요.</p>
+    </section>
+
+    <footer class="sw-page-footer">
+      <a href="https://github.com/loreenkim0301/selectway-lecture-ds" target="_blank" rel="noopener">GitHub</a> · MIT License · SELECTWAY
+    </footer>
+
+  </div>
+</div>
+
+<script src="../dist/sw-ds.js"></script>
+</body>
+</html>

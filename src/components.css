@@ -1,0 +1,126 @@
+/* =========================================================
+   selectway-lecture-ds — components
+   ========================================================= */
+
+/* ---------- 표지 헤더 ---------- */
+.sw-doc-header{ border-bottom:1px solid var(--sw-line); padding-bottom:24px; margin-bottom:36px; }
+.sw-doc-header .sw-date{ font-family:var(--sw-font-mono); font-size:12.5px; font-weight:700; letter-spacing:.05em; color:var(--sw-accent); margin-bottom:8px; }
+.sw-doc-header h1{ font-size:clamp(22px,3.4vw,34px); letter-spacing:-.03em; margin:8px 0 12px; }
+.sw-doc-header .sw-lede{ color:#4b535e; font-size:16.5px; max-width:62ch; }
+
+/* ---------- 섹션 리듬 ---------- */
+.sw-scope section{ padding-top:44px; }
+.sw-scope section:first-of-type{ padding-top:0; }
+.sw-section-title{ font-size:clamp(20px,2.8vw,26px); letter-spacing:-.02em; border-top:1px solid var(--sw-line); padding-top:32px; margin-top:0; }
+.sw-scope section:first-of-type .sw-section-title{ border-top:none; padding-top:0; }
+.sw-sub-title{ font-size:18px; margin-top:28px; letter-spacing:-.01em; }
+
+/* ---------- 그리드 / 비교 레이아웃 ---------- */
+.sw-grid2,.sw-grid3,.sw-grid4{ display:grid; gap:14px; margin:18px 0; }
+.sw-grid2{ grid-template-columns:repeat(2,1fr); }
+.sw-grid3{ grid-template-columns:repeat(3,1fr); }
+.sw-grid4{ grid-template-columns:repeat(4,1fr); }
+@media(max-width:1023px){ .sw-grid3,.sw-grid4{ grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .sw-grid2,.sw-grid3,.sw-grid4{ grid-template-columns:1fr; } }
+
+.sw-compare{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0; }
+.sw-compare .sw-before{ border-top:3px solid #8a929c; }
+.sw-compare .sw-after{ border-top:3px solid var(--sw-accent); }
+@media(max-width:640px){ .sw-compare{ grid-template-columns:1fr; } }
+
+/* ---------- 카드 ---------- */
+.sw-card{ background:var(--sw-surface); border:1px solid var(--sw-line); border-radius:var(--sw-radius); padding:18px; box-shadow:var(--sw-shadow); }
+.sw-card h3{ font-size:15px; margin:0 0 7px; }
+.sw-card p{ font-size:13.5px; color:var(--sw-ink-muted); margin:0; }
+.sw-card strong{ color:var(--sw-ink); }
+
+.sw-step-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.5rem; height:1.5rem; border-radius:50%;
+  background:var(--sw-ink); color:#fff; font-size:.8rem;
+  font-family:var(--sw-font-mono); margin-right:.45rem;
+}
+
+/* ---------- 버튼 / 배지 ---------- */
+.sw-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  font:600 13px var(--sw-font-sans); color:var(--sw-accent-ink);
+  background:var(--sw-accent-soft); border:1px solid var(--sw-line);
+  border-radius:999px; padding:7px 14px; cursor:pointer;
+}
+.sw-btn:hover{ background:#e3e9ff; }
+.sw-badge{
+  display:inline-block; font:700 10px var(--sw-font-mono); letter-spacing:.05em;
+  text-transform:uppercase; padding:3px 8px; border-radius:5px;
+  background:var(--sw-accent-soft); color:var(--sw-accent-ink);
+}
+
+/* ---------- 안내 / 주의 박스 ---------- */
+.sw-note,.sw-tip,.sw-notice,.sw-story{ border-radius:var(--sw-radius); padding:14px 16px; margin:18px 0; font-size:13.5px; }
+.sw-note{ background:var(--sw-accent-soft); border:1px solid #d8e0ff; }
+.sw-tip{ background:var(--sw-green-soft); border:1px solid #caeadf; }
+.sw-notice{ background:var(--sw-orange-soft); border:1px solid #f3d7c3; }
+.sw-story{ background:#faf7f0; border:1px solid #e9dcc0; }
+.sw-note .sw-label,.sw-tip .sw-label,.sw-notice .sw-label,.sw-story .sw-label{
+  display:inline-block; font:700 10px var(--sw-font-mono); letter-spacing:.05em; text-transform:uppercase; margin-right:8px;
+}
+.sw-note .sw-label{ color:var(--sw-accent); }
+.sw-tip .sw-label{ color:var(--sw-green); }
+.sw-notice .sw-label{ color:var(--sw-orange); }
+.sw-story .sw-label{ color:#96731c; }
+
+/* ---------- 프롬프트 / 명령어 박스 ---------- */
+.sw-prompt-tier{ font-family:var(--sw-font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; font-weight:700; color:var(--sw-ink-muted); margin:14px 0 6px; }
+.sw-prompt-tier.sw-advanced{ color:var(--sw-accent-ink); }
+.sw-prompt-wrap{ position:relative; margin:8px 0 16px; }
+.sw-prompt-box{
+  background:var(--sw-code-bg); color:var(--sw-code-ink); border-radius:10px;
+  padding:17px 56px 17px 18px; font-family:var(--sw-font-mono); font-size:12.5px;
+  line-height:1.7; white-space:pre-wrap; overflow:auto;
+}
+.sw-copy-btn{ position:absolute; top:9px; right:9px; background:#252a31; color:#fff; border:1px solid #444b55; border-radius:7px; padding:6px 9px; font-size:11px; cursor:pointer; }
+.sw-copy-btn:hover{ background:#343a43; }
+
+/* ---------- 표 ---------- */
+.sw-tablewrap{ overflow-x:auto; margin:18px 0; border-radius:var(--sw-radius); border:1px solid var(--sw-line); }
+.sw-tablewrap table{ border-collapse:collapse; width:100%; min-width:560px; background:var(--sw-surface); font-size:13.5px; }
+.sw-tablewrap th, .sw-tablewrap td{ text-align:left; padding:12px 14px; border-bottom:1px solid var(--sw-line); vertical-align:top; }
+.sw-tablewrap thead th{ background:var(--sw-surface-2); color:var(--sw-ink); font-weight:700; font-size:13px; }
+.sw-tablewrap tbody tr:last-child td{ border-bottom:none; }
+
+/* ---------- 접이식 상세 ---------- */
+.sw-scope details{ border:1px solid var(--sw-line); border-radius:var(--sw-radius); padding:14px 18px; margin:16px 0; background:var(--sw-surface); }
+.sw-scope details summary{ cursor:pointer; font-weight:700; font-size:14.5px; list-style:none; }
+.sw-scope details summary::-webkit-details-marker{ display:none; }
+.sw-scope details summary::before{ content:"▸ "; color:var(--sw-accent); }
+.sw-scope details[open] summary::before{ content:"▾ "; }
+
+/* ---------- 출처 / 근거 ---------- */
+.sw-cite{ margin-top:18px; padding-top:10px; border-top:1px dashed var(--sw-line); font-size:12px; color:var(--sw-ink-muted); line-height:1.6; }
+.sw-cite .sw-cite-label{ font-weight:700; color:var(--sw-ink-muted); }
+.sw-cite a{ color:var(--sw-ink-muted); text-decoration:underline; }
+.sw-cite a:hover{ color:var(--sw-accent); }
+
+/* ---------- 목록형 TOC 카드 ---------- */
+.sw-toc-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+.sw-toc-item{ display:block; border:1px solid var(--sw-line); border-radius:var(--sw-radius); padding:18px 20px; text-decoration:none; color:inherit; background:var(--sw-surface); transition:border-color .15s, background .15s; }
+.sw-toc-item:hover{ border-color:var(--sw-accent); background:var(--sw-accent-soft); }
+.sw-toc-item h2{ display:inline; font-size:16.5px; margin:0; }
+.sw-toc-item p{ margin:8px 0 0; font-size:14px; color:var(--sw-ink-muted); padding-left:34px; }
+
+/* ---------- 전체화면 모달 (QR/확대 안내 등 범용) ---------- */
+.sw-modal{
+  position:fixed; inset:0; background:var(--sw-overlay-bg, rgba(15,17,21,.94));
+  z-index:999; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:28px; padding:24px;
+}
+.sw-modal[hidden]{ display:none; }
+.sw-modal img{ width:min(38vw,200px); height:min(38vw,200px); background:#fff; border-radius:14px; padding:14px; box-sizing:border-box; }
+.sw-modal .sw-modal-text{ font:800 clamp(22px,5vw,52px)/1.3 var(--sw-font-mono); color:#fff; text-align:center; word-break:break-all; width:96vw; max-width:1400px; }
+.sw-modal-close{ position:absolute; top:20px; right:24px; width:40px; height:40px; border-radius:50%; border:none; background:rgba(255,255,255,.12); color:#fff; font-size:20px; cursor:pointer; }
+.sw-modal-close:hover{ background:rgba(255,255,255,.22); }
+
+/* ---------- 푸터 ---------- */
+.sw-page-footer{ margin-top:56px; padding-top:18px; border-top:1px solid var(--sw-line); color:var(--sw-ink-muted); font-size:12.5px; text-align:center; }
+.sw-page-footer a{ color:var(--sw-ink-muted); }
+.sw-page-footer a:hover{ color:var(--sw-accent); }

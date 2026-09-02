@@ -1,0 +1,19 @@
+{
+  "name": "selectway-lecture-ds",
+  "version": "0.1.0",
+  "description": "PC/태블릿/모바일에 최적화된, 강의 교안·기술 블로그용 드롭인 디자인 시스템 (빌드 도구 불필요)",
+  "license": "MIT",
+  "author": "SELECTWAY (김수정, Loreen Kim) <loreen@selectway.co.kr>",
+  "homepage": "https://loreenkim0301.github.io/selectway-lecture-ds/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loreenkim0301/selectway-lecture-ds.git"
+  },
+  "keywords": ["design-system", "css", "lecture", "korean", "education", "drop-in"],
+  "main": "dist/selectway-lecture-ds.css",
+  "style": "dist/selectway-lecture-ds.css",
+  "files": ["src", "js", "dist", "LICENSE", "README.md"],
+  "scripts": {
+    "build": "node build.js"
+  }
+}
