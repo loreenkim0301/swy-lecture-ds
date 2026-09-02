@@ -1,4 +1,4 @@
-# selectway-lecture-ds
+# swy-lecture-ds
 
 강의 교안 · 기술 블로그 · 실습 문서에 최적화된 **드롭인(drop-in) 디자인 시스템**입니다.
 PC·태블릿·모바일 3단 반응형을 기본으로 하고, 빌드 도구 없이 CSS/JS 파일 하나씩만 연결하면 바로 적용됩니다.
@@ -14,21 +14,21 @@ PC·태블릿·모바일 3단 반응형을 기본으로 하고, 빌드 도구 �
 ### 방법 1 — CDN (빌드 도구 불필요, 가장 빠름)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectway-lecture-ds/dist/selectway-lecture-ds.min.css">
-<script src="https://cdn.jsdelivr.net/npm/selectway-lecture-ds/dist/sw-ds.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swy-lecture-ds/dist/swy-lecture-ds.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swy-lecture-ds/dist/sw-ds.js" defer></script>
 ```
 
 > npm 배포(`npm publish`) 전까지는 jsdelivr의 GitHub 모드로 대체할 수 있습니다:
-> `https://cdn.jsdelivr.net/gh/loreenkim0301/selectway-lecture-ds@main/dist/selectway-lecture-ds.min.css`
+> `https://cdn.jsdelivr.net/gh/loreenkim0301/swy-lecture-ds@main/dist/swy-lecture-ds.min.css`
 
 ### 방법 2 — npm
 
 ```bash
-npm install selectway-lecture-ds
+npm install swy-lecture-ds
 ```
 
 ```css
-@import "selectway-lecture-ds/dist/selectway-lecture-ds.css";
+@import "swy-lecture-ds/dist/swy-lecture-ds.css";
 ```
 
 ### 사용법

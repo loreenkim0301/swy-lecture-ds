@@ -27,11 +27,11 @@ function minify(css) {
 
 if (!fs.existsSync(DIST_DIR)) fs.mkdirSync(DIST_DIR, { recursive: true });
 
-const banner = `/*! selectway-lecture-ds v${require('./package.json').version} | MIT License | https://github.com/loreenkim0301/selectway-lecture-ds */\n`;
+const banner = `/*! swy-lecture-ds v${require('./package.json').version} | MIT License | https://github.com/loreenkim0301/swy-lecture-ds */\n`;
 const combined = ORDER.map(readSrc).join('\n');
 
-fs.writeFileSync(path.join(DIST_DIR, 'selectway-lecture-ds.css'), banner + combined);
-fs.writeFileSync(path.join(DIST_DIR, 'selectway-lecture-ds.min.css'), banner + minify(combined));
+fs.writeFileSync(path.join(DIST_DIR, 'swy-lecture-ds.css'), banner + combined);
+fs.writeFileSync(path.join(DIST_DIR, 'swy-lecture-ds.min.css'), banner + minify(combined));
 fs.copyFileSync(path.join(__dirname, 'js', 'sw-ds.js'), path.join(DIST_DIR, 'sw-ds.js'));
 
-console.log('build ok -> dist/selectway-lecture-ds.css, dist/selectway-lecture-ds.min.css, dist/sw-ds.js');
+console.log('build ok -> dist/swy-lecture-ds.css, dist/swy-lecture-ds.min.css, dist/sw-ds.js');

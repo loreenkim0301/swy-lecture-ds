@@ -1,5 +1,5 @@
 /* =========================================================
-   selectway-lecture-ds — layout (sidebar + content)
+   swy-lecture-ds — layout (sidebar + content)
    PC / 태블릿 / 모바일 3단 반응형.
    미디어쿼리 값은 tokens.css의 --sw-bp-tablet(1023px),
    --sw-bp-mobile(640px)와 반드시 동일하게 유지할 것

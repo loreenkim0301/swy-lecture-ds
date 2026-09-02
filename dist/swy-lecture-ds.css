@@ -1,6 +1,6 @@
-/*! selectway-lecture-ds v0.1.0 | MIT License | https://github.com/loreenkim0301/selectway-lecture-ds */
+/*! swy-lecture-ds v0.1.0 | MIT License | https://github.com/loreenkim0301/swy-lecture-ds */
 /* =========================================================
-   selectway-lecture-ds — design tokens
+   swy-lecture-ds — design tokens
    모든 값은 --sw- 접두어로 네임스페이스: 호스트 페이지의
    기존 CSS 변수와 충돌하지 않도록 함.
    ========================================================= */
@@ -52,7 +52,7 @@
 }
 
 /* =========================================================
-   selectway-lecture-ds — base
+   swy-lecture-ds — base
    중요: 전역 태그(body, a, h1...)를 직접 건드리지 않는다.
    반드시 .sw-scope 안에서만 리셋/타이포그래피가 적용되도록 한다.
    호스트 페이지의 나머지 요소는 절대 건드리지 않기 위함.
@@ -79,7 +79,7 @@
 .sw-scope li{ margin-bottom:.4rem; }
 
 /* =========================================================
-   selectway-lecture-ds — layout (sidebar + content)
+   swy-lecture-ds — layout (sidebar + content)
    PC / 태블릿 / 모바일 3단 반응형.
    미디어쿼리 값은 tokens.css의 --sw-bp-tablet(1023px),
    --sw-bp-mobile(640px)와 반드시 동일하게 유지할 것
@@ -173,7 +173,7 @@
 }
 
 /* =========================================================
-   selectway-lecture-ds — components
+   swy-lecture-ds — components
    ========================================================= */
 
 /* ---------- 표지 헤더 ---------- */

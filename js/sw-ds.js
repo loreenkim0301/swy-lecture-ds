@@ -1,5 +1,5 @@
 /*!
- * selectway-lecture-ds — behavior layer (no dependencies)
+ * swy-lecture-ds — behavior layer (no dependencies)
  * data-sw-* 속성으로 동작. 여러 개 붙여도 서로 충돌하지 않도록 설계.
  */
 (function () {
